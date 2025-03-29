@@ -1,0 +1,188 @@
+---
+import WhatsappIcon from "./icons/Whatsapp.astro";
+import GmailIcon from "./icons/Gmail.astro";
+import ClockIcon from "./icons/Clock.astro";
+import MessageIcon from "./icons/Message.astro";
+import SendIcon from "./icons/Send.astro";
+import FormIcon from "./icons/Form.astro";
+import InstagramIcon from "./icons/Instagram.astro";
+import FacebookIcon from "./icons/Facebook.astro";
+---
+
+<main
+    class="flex items-center justify-center lg:min-h-full py-16 sm:pt-16"
+    id="contacto"
+>
+    <div
+        class="relative w-full h-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-8"
+    >
+        <div>
+            <p
+                class="inline-block border border-pink-light bg-white text-pink-dark px-3 py-1 rounded-full font-light mb-6"
+            >
+                Contacto
+            </p>
+        </div>
+        <div
+            class="relative flex flex-col md:flex-row items-center justify-center max-w-5xl gap-8 md:gap-10 w-full"
+        >
+            <!-- Formulario -->
+            <section
+                class="w-full border bg-white border-gray p-6 md:p-8 rounded-lg"
+            >
+                <h2
+                    class="text-2xl md:text-[30px] text-pink-dark flex items-center gap-2"
+                >
+                    <FormIcon class="size-6" />
+                    Información de contacto
+                </h2>
+                <p class="text-gray mt-2">
+                    Complete el formulario y me comunicaré contigo lo antes
+                    posible.
+                </p>
+                <form
+                    action="https://formspree.io/f/mzzeavln"
+                    method="POST"
+                    class="flex flex-col items-center gap-4 my-5"
+                >
+                    <input
+                        type="text"
+                        name="nombre"
+                        autocomplete="off"
+                        placeholder="Nombre Completo"
+                        class="w-full py-3 px-4 border bg-white border-gray rounded-lg outline-none focus:border-pink-dark text-gray focus:bg-transparent transition duration-200"
+                    />
+                    <input
+                        type="email"
+                        name="email"
+                        autocomplete="off"
+                        placeholder="Correo Electrónico"
+                        class="w-full py-3 px-4 border bg-white border-gray rounded-lg outline-none focus:border-pink-dark text-gray focus:bg-transparent transition duration-200"
+                    />
+                    <textarea
+                        name="mensaje"
+                        placeholder="Escribe tu mensaje..."
+                        class="w-full max-h-44 min-h-44 py-3 px-4 border bg-white border-gray rounded-lg h-44 outline-none focus:border-pink-dark text-gray focus:bg-transparent transition duration-200"
+                    ></textarea>
+                    <button
+                        type="submit"
+                        class="w-full p-3 bg-pink-dark text-white rounded-full flex items-center justify-center gap-2 border border-pink-dark hover:bg-[#c7507c] transition duration-200 cursor-pointer"
+                    >
+                        <SendIcon class="size-6" />
+                        Enviar mensaje
+                    </button>
+                </form>
+            </section>
+
+            <!-- Información de contacto -->
+            <section class="w-full px-4 md:px-8">
+                <div>
+                    <h2
+                        class="text-2xl md:text-[30px] text-pink-dark flex items-center gap-2 max-sm:justify-center"
+                    >
+                        <MessageIcon class="size-6" />
+                        ¿Deseas contactarme?
+                    </h2>
+                    <p class="text-gray mt-2 max-sm:text-pretty">
+                        Si deseas contactarme, puedes hacerlo a través de mis
+                        redes sociales o enviándome un correo electrónico. Estoy
+                        siempre disponible para nuevas oportunidades y
+                        colaboraciones. ❤️
+                    </p>
+                </div>
+
+                <!-- Redes Sociales -->
+                <div class="my-6 md:my-10">
+                    <h3
+                        class="text-xl md:text-[22px] text-pink-dark max-sm:text-center"
+                    >
+                        Redes Sociales
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
+                        <a
+                            href="https://wa.me/573014820669"
+                            target="_blank"
+                            class="flex items-center gap-2 px-5 py-3 rounded-full w-full bg-[#199d10] transition duration-200 hover:opacity-80"
+                        >
+                            <WhatsappIcon class="size-6 text-white" />
+                            <span class="text-white font-semibold"
+                                >WhatsApp</span
+                            >
+                        </a>
+                        <a
+                            href="https://facebook.com"
+                            target="_blank"
+                            class="flex items-center gap-2 px-5 py-3 rounded-full w-full bg-[#3b5998] transition duration-200 hover:opacity-80"
+                        >
+                            <FacebookIcon class="size-6 text-white" />
+                            <span class="text-white font-semibold"
+                                >Facebook</span
+                            >
+                        </a>
+                        <a
+                            href="https://www.instagram.com/sanacionangelical_/"
+                            target="_blank"
+                            class="flex items-center gap-2 px-5 py-3 rounded-full w-full bg-[#c7507c] transition duration-200 hover:opacity-80"
+                        >
+                            <InstagramIcon class="size-6 text-white" />
+                            <span class="text-white font-semibold"
+                                >Instagram</span
+                            >
+                        </a>
+                        <a
+                            href="mailto:casato311409@gmail.com"
+                            target="_blank"
+                            class="flex items-center gap-2 px-5 py-3 rounded-full w-full bg-[#ff5757] transition duration-200 hover:opacity-80"
+                        >
+                            <GmailIcon class="size-6 text-white" />
+                            <span class="text-white font-semibold">Email</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Disponibilidad -->
+                <div class="w-full border border-gray bg-white p-6 rounded-lg">
+                    <h2
+                        class="text-xl md:text-[22px] text-pink-dark mb-4 flex items-center gap-2 max-sm:justify-center"
+                    >
+                        <ClockIcon class="size-6" />
+                        Disponibilidad
+                    </h2>
+                    <p class="text-gray">Lunes a Viernes</p>
+                    <p
+                        class="text-pink-dark font-semibold my-2 text-lg md:text-[18px]"
+                    >
+                        9:00 AM - 5:00 PM
+                    </p>
+                    <p class="text-gray">(GMT-5) Hora de Colombia</p>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
+
+<style>
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Fjalla One", sans-serif;
+    }
+
+    main {
+        animation: slideUp 0.5s ease-out;
+    }
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>

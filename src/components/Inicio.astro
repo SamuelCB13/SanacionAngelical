@@ -1,0 +1,83 @@
+---
+import ListCheckIcon from "./icons/ListCheck.astro";
+import PhoneCallIcon from "./icons/PhoneCall.astro";
+---
+
+<main
+    class="flex flex-col-reverse md:flex-row items-center justify-center lg:min-h-[100vh] min-h-full sm:pt-[5vh] pt-[10vh] w-full px-4 sm:px-6 lg:px-8 xl:px-[15%]"
+    id="inicio"
+>
+    <section class="w-full md:w-1/2 flex flex-col justify-center gap-4 py-8 md:py-0">
+        <div class="flex flex-wrap gap-2 max-sm:justify-center">
+            <p
+                class="border border-pink-light bg-white text-primary px-3 py-[2px] text-center rounded-full text-xs font-light"
+            >
+                Sanación
+            </p>
+            <p
+                class="border border-pink-light bg-white text-primary px-3 py-[2px] text-center rounded-full text-xs font-light"
+            >
+                Bienestar
+            </p>
+            <p
+                class="border border-pink-light bg-white text-primary px-3 py-[2px] text-center rounded-full text-xs font-light"
+            >
+                Angelical
+            </p>
+        </div>
+        <h1
+            class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-blue-dark via-purple-dark to-primary text-transparent bg-clip-text  max-sm:text-center"
+        >
+            Encuentra paz y equilibrio en tu vida
+        </h1>
+        <p class="text-gray">
+            Soy especialista en terapia emocional y angelología, dedicada a
+            ayudarte a sanar, transformar y elevar tu energía para una vida
+            plena y armoniosa. 🪽
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
+            <a
+                href="#servicios"
+                class="flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-dark via-purple-dark to-primary rounded-full w-full hover:opacity-70 transition duration-200"
+            >
+                <ListCheckIcon class="size-5 md:size-6 text-white" />
+                <span class="text-white font-semibold text-sm md:text-base"
+                    >Conoce mis servicios</span
+                >
+            </a>
+            <a
+                href="https://wa.me/573014820669"
+                target="_blank"
+                class="flex items-center justify-center gap-2 px-4 py-3 border border-pink-light bg-white rounded-full w-full hover:bg-pink-light transition duration-200"
+            >
+                <PhoneCallIcon class="size-5 md:size-6 text-primary" />
+                <span class="text-primary font-semibold text-sm md:text-base">Contactar ahora</span
+                >
+            </a>
+        </div>
+    </section>
+    <section class="w-full md:w-1/2 grid place-items-center pt-6 md:py-0">
+        <img
+            src="/logo.png"
+            alt="Logo de Sanación angelical"
+            class="max-w-[70%] sm:max-w-[60%] md:max-w-[80%] lg:max-w-full"
+        />
+    </section>
+</main>
+
+<style>
+    main {
+        animation: slideUp 1s ease-out;
+    }
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>

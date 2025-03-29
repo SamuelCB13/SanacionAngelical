@@ -1,0 +1,92 @@
+---
+import ArrowRightIcon from "./icons/ArrowRight.astro";
+import HeartIcon from "./icons/Heart.astro";
+import StarIcon from "./icons/Star.astro";
+
+const servicios = [
+    {
+        titulo: "Terapia Emocional",
+        descripcion:
+            "Sesiones personalizadas para liberar bloqueos emocionales, superar traumas y desarrollar herramientas para gestionar tus emociones.",
+        icono: HeartIcon,
+        href: "https://wa.me/573014820669",
+    },
+    {
+        titulo: "Angeología Práctica",
+        descripcion:
+            "Aprende a conectar con la energía angélica para recibir guía, protección y sanación en tu vida cotidiana.",
+        icono: StarIcon,
+        href: "https://wa.me/573014820669",
+    },
+    {
+        titulo: "Meditaciones Guiadas",
+        descripcion:
+            "Sesiones de meditación para calmar la mente, elevar tu vibración y conectar con tu sabiduría interior.",
+        icono: HeartIcon,
+        href: "https://wa.me/573014820669",
+    }
+];
+---
+
+<main
+    class="flex items-center justify-center min-h-full pt-[10vh] w-full py-16 px-4 sm:px-6 lg:px-8"
+    id="servicios"
+>
+    <article class="w-full max-w-7xl">
+        <section class="text-center space-y-6 mb-12">
+            <p class="inline-block border border-pink-light bg-white text-pink-dark px-3 py-1 rounded-full font-light">
+                Mis Servicios
+            </p>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-pink-dark">
+                Caminos hacia tu bienestar
+            </h1>
+            <p class="text-gray max-w-2xl mx-auto max-sm:text-start">
+                Ofrezco una variedad de servicios terapéuticos diseñados para ayudarte a encontrar equilibrio, sanación y crecimiento personal.
+            </p>
+        </section>
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {
+                servicios.map((servicio) => (
+                    <div class="flex flex-col gap-5 border border-pink-light bg-white rounded-xl p-6 transform transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
+                        <header class="flex items-center justify-between">
+                            <h2 class="text-pink-dark text-lg sm:text-xl font-bold">
+                                {servicio.titulo}
+                            </h2>
+                            <servicio.icono class="size-6 sm:size-7 text-pink-dark bg-pink-light rounded-full p-1" />
+                        </header>
+                        <main class="flex-grow">
+                            <p class="text-gray text-base">{servicio.descripcion}</p>
+                        </main>
+                        <footer>
+                            <a
+                                href={servicio.href || "#"}
+                                target="_blank"
+                                class={`flex items-center gap-2 text-sm text-primary font-semibold hover:text-primary/80 transition-colors ${!servicio.href ? 'pointer-events-none opacity-50' : ''}`}
+                            >
+                                Saber más
+                                <ArrowRightIcon class="size-4" />
+                            </a>
+                        </footer>
+                    </div>
+                ))
+            }
+        </section>
+    </article>
+</main>
+
+<style>
+    main {
+        animation: slideUp 1s ease-out;
+    }
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>

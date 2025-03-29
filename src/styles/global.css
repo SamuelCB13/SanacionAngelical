@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+/* Scroll animado al dar clic a un <a> para ir a una sección */
+html {
+    scroll-behavior: smooth;
+}
+
+/* No hacer animación de scroll si el usuario tiene las animaciones desactivadas */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+        color: #f1d9ff;
+    }
+}
+
+@theme {
+    --color-primary: #f78db3;
+    --color-pink-dark: #d60c54;
+    --color-pink-light: #ffdee1;
+    --color-purple-dark: #c054fd;
+    --color-purple-light: #f1d9ff;
+    --color-blue-dark: #75cecd;
+    --color-blue-light: #c0f0f7;
+    --color-gray: #808080;
+    --font-principal: 'Inter Variable', sans-serif;
+}

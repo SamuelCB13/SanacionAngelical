@@ -1,0 +1,92 @@
+---
+import HistoryIcon from "./icons/History.astro";
+---
+
+<main
+    class="relative flex items-center justify-center min-h-full w-full pt-[10vh] px-4 sm:px-6 lg:px-8 py-16"
+    id="sobremi"
+>
+    <article class="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-7xl items-center">
+        <section class="flex justify-center md:justify-start">
+            <div
+                class="w-full max-w-md aspect-square flex items-center justify-center border border-transparent rounded-xl overflow-hidden"
+            >
+                <img
+                    src="/sobremi.png"
+                    alt="Retrato de la sanadora"
+                    class="object-cover w-full h-full"
+                />
+            </div>
+        </section>
+        <section class="flex flex-col max-sm:items-center gap-5">
+            <div>
+                <p
+                    class="inline-block border border-blue-light bg-white text-blue-dark px-3 py-1 rounded-full font-light mb-4"
+                >
+                    Sobre Mí
+                </p>
+            </div>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-cyan-300  max-sm:text-center">
+                Mi camino como sanadora
+            </h1>
+            <div class="space-y-4 text-base sm:text-lg">
+                <p class="text-gray text-pretty">
+                    <span class="font-bold text-blue-dark"
+                        >Con más de 10 años de experiencia en terapia emocional</span
+                    >, he dedicado mi vida a ayudar a las personas a reconectar con
+                    su esencia y encontrar su propósito.
+                </p>
+                <p class="text-gray text-pretty">
+                    Mi enfoque combina técnicas terapéuticas modernas con sabiduría
+                    ancestral, <span class="font-bold text-blue-dark"
+                        >creando un espacio seguro donde puedes explorar, sanar y
+                        transformar tu vida</span
+                    > desde la raíz.
+                </p>
+                <p class="text-gray text-pretty">
+                    A lo largo de mi trayectoria, <span
+                        class="font-bold text-blue-dark"
+                        >he acompañado a innumerables personas en su camino de
+                        autoconocimiento y crecimiento personal</span
+                    >, brindándoles herramientas prácticas para gestionar sus
+                    emociones, superar bloqueos y vivir plenas.
+                </p>
+                <p class="text-gray text-pretty">
+                    Mi misión es <span class="font-bold text-blue-dark"
+                        >guiarte en un proceso profundo de transformación</span
+                    >, donde puedas liberar creencias limitantes, fortalecer tu
+                    bienestar emocional y alinear tu vida con tu verdadero ser.
+                </p>
+            </div>
+            <div class="mt-6">
+                <a
+                    href="https://wa.me/573014820669"
+                    target="_blank"
+                    class="inline-flex items-center justify-center gap-2 px-4 py-3 border border-blue-dark rounded-full bg-blue-dark hover:opacity-70 transition duration-200 text-sm"
+                >
+                    <HistoryIcon class="size-5 text-white" />
+                    <span class="text-white font-semibold"
+                        >Conoce mi historia</span
+                    >
+                </a>
+            </div>
+        </section>
+    </article>
+</main>
+
+<style>
+    main {
+        animation: slideUp 1s ease-out;
+    }
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>

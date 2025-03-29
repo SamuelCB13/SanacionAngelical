@@ -1,0 +1,64 @@
+---
+import InstagramIcon from "./icons/Instagram.astro";
+import FacebookIcon from "./icons/Facebook.astro";
+import WhastappIcon from "./icons/Whastapp.astro";
+import GmailIcon from "./icons/Gmail.astro";
+---
+
+<footer
+    class="flex flex-col sm:flex-row max-sm:justify-between justify-evenly items-center w-full mx-auto gap-6 p-4 py-6 sm:py-4 border-t bg-white border-gray-200"
+>
+    <!-- Logo -->
+    <section class="w-full sm:w-auto text-center sm:text-left">
+        <a
+            href="/"
+            class="flex items-center justify-center sm:justify-start gap-3 text-gray"
+        >
+            <img src="/icono.png" alt="Ícono Sanación Angelical" class="size-8 sm:size-10" />
+            <span class="text-sm sm:text-base">Sanación Angelical</span>
+        </a>
+    </section>
+
+    <section class="w-full sm:w-auto text-center order-3 sm:order-2 sm:mt-0">
+        <p class="text-gray text-xs sm:text-sm">
+            &copy; {new Date().getFullYear()} Sanación Angelical - Todos los derechos
+            reservados.
+        </p>
+    </section>
+
+    <section
+        class="flex justify-center gap-6 sm:gap-4 text-black w-full sm:w-auto order-2 sm:order-3"
+    >
+        <a
+            href="https://wa.me/573014820669"
+            target="_blank"
+            class="hover:text-[#199d10] transition-all duration-200 ease-in-out"
+            aria-label="WhatsApp"
+        >
+            <WhastappIcon class="size-6" />
+        </a>
+        <a
+            href="https://www.instagram.com/sanacionangelical_/"
+            target="_blank"
+            class="hover:text-[#c7507c] transition-all duration-200 ease-in-out"
+            aria-label="Instagram"
+        >
+            <InstagramIcon class="size-6" />
+        </a>
+        <a
+            href="https://facebook.com"
+            target="_blank"
+            class="hover:text-[#3b5998] transition-all duration-200 ease-in-out"
+            aria-label="Facebook"
+        >
+            <FacebookIcon class="size-6" />
+        </a>
+        <a
+            href="mailto:contacto@sanacionangelical.com"
+            class="hover:text-[#ff5757] transition-all duration-200 ease-in-out"
+            aria-label="Email"
+        >
+            <GmailIcon class="size-6" />
+        </a>
+    </section>
+</footer>

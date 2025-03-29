@@ -1,0 +1,94 @@
+---
+const testimonios = [
+    {
+        iniciales: "SH",
+        nombre: "Sofía Hincapié",
+        ciudad: "Sabaneta, Colombia 🇨🇴",
+        calificacion: "⭐⭐⭐⭐⭐",
+        descripcion:
+            "Las sesiones de terapia emocional cambiaron completamente mi perspectiva. Pude liberar traumas antiguos y ahora me siento más ligera y en paz conmigo misma.",
+    },
+    {
+        iniciales: "TC",
+        nombre: "Tomás Carvajal",
+        ciudad: "Medellín, Colombia 🇨🇴",
+        calificacion: "⭐⭐⭐⭐⭐",
+        descripcion:
+            "Aprender a conectar con los ángeles ha sido una experiencia transformadora. Ahora siento una guía constante y mi ansiedad ha disminuido considerablemente.",
+    },
+    {
+        iniciales: "LP",
+        nombre: "Laura Posada",
+        ciudad: "Itagüí, Colombia 🇨🇴",
+        calificacion: "⭐⭐⭐⭐⭐",
+        descripcion:
+            "Las meditaciones guiadas me han ayudado a encontrar calma en medio del caos. He desarrollado una conexión más profunda conmigo misma y con mi intuición.",
+    },
+];
+---
+
+<main
+    class="flex items-center justify-center min-h-full pt-[10vh] w-full py-16 px-4 sm:px-6 lg:px-8"
+    id="testimonios"
+>
+    <article class="w-full max-w-7xl">
+        <section class="text-center space-y-6 mb-10">
+            <p class="inline-block border border-purple-light bg-white text-purple-dark px-3 py-1 rounded-full font-light">
+                Testimonios
+            </p>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-purple-dark">
+                Historias de transformación
+            </h1>
+            <p class="text-gray max-w-2xl mx-auto max-sm:text-start">
+                Ofrezco una variedad de servicios terapéuticos diseñados para ayudarte a encontrar equilibrio, sanación y crecimiento personal.
+            </p>
+        </section>
+
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {
+                testimonios.map((testimonio) => (
+                    <div class="flex flex-col gap-4 border border-purple-light bg-white rounded-xl p-6 transform transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
+                        <header class="flex items-center gap-4">
+                            <section class="bg-purple-light rounded-full w-12 h-12 flex items-center justify-center text-purple-dark font-semibold">
+                                {testimonio.iniciales}
+                            </section>
+                            <section>
+                                <h2 class="text-purple-dark font-semibold text-lg">
+                                    {testimonio.nombre}
+                                </h2>
+                                <h3 class="text-gray text-sm">
+                                    {testimonio.ciudad}
+                                </h3>
+                            </section>
+                        </header>
+                        <article class="flex justify-start mb-2">
+                            <p>{testimonio.calificacion}</p>
+                        </article>
+                        <footer>
+                            <p class="text-gray italic text-base">
+                                "{testimonio.descripcion}"
+                            </p>
+                        </footer>
+                    </div>
+                ))
+            }
+        </section>
+    </article>
+</main>
+
+<style>
+    main {
+        animation: slideUp 1s ease-out;
+    }
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>

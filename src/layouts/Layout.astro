@@ -1,0 +1,33 @@
+---
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "@fontsource-variable/inter";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link
+            rel="shortcut icon"
+            href="/icono.png"
+            type="image/png"
+        />
+        <title>Sanación Angelical - Angeóloga y Terapeuta Emocional</title>
+    </head>
+    <body class="m-0 p-0 box-border font-principal">
+        <div
+            class="fixed inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:4rem_4rem] md:bg-[size:6rem_4rem]"
+        >
+            <div
+                class="fixed bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_400px_at_90%_200px,#ffafd0,transparent)] md:bg-[radial-gradient(circle_600px_at_100%_200px,#ffafd0,transparent)] lg:bg-[radial-gradient(circle_800px_at_100%_200px,#ffafd0,transparent)]"
+            >
+            </div>
+        </div>
+        <Header />
+        <slot />
+        <Footer />
+    </body>
+</html>
