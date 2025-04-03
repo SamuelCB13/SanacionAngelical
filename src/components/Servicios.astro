@@ -9,22 +9,22 @@ const servicios = [
         descripcion:
             "Sesiones personalizadas para liberar bloqueos emocionales, superar traumas y desarrollar herramientas para gestionar tus emociones.",
         icono: HeartIcon,
-        href: "https://wa.link/vtfy7t",
+        href: "/servicios",
     },
     {
         titulo: "Angeología Práctica",
         descripcion:
             "Aprende a conectar con la energía angélica para recibir guía, protección y sanación en tu vida cotidiana.",
         icono: StarIcon,
-        href: "https://wa.link/5ovkkj",
+        href: "/servicios",
     },
     {
         titulo: "Meditaciones Guiadas",
         descripcion:
             "Sesiones de meditación para calmar la mente, elevar tu vibración y conectar con tu sabiduría interior.",
         icono: HeartIcon,
-        href: "https://wa.link/zypfhr",
-    }
+        href: "/servicios",
+    },
 ];
 ---
 
@@ -34,17 +34,25 @@ const servicios = [
 >
     <article class="w-full max-w-7xl">
         <section class="text-center space-y-6 mb-12">
-            <p class="inline-block border border-pink-light bg-white text-pink-dark px-3 py-1 rounded-full font-light">
+            <p
+                class="inline-block border border-pink-light bg-white text-pink-dark px-3 py-1 rounded-full font-light"
+            >
                 Mis Servicios
             </p>
-            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-pink-dark">
+            <h1
+                class="text-3xl sm:text-4xl md:text-5xl font-bold text-pink-dark"
+            >
                 Caminos hacia tu bienestar
             </h1>
             <p class="text-gray max-w-2xl mx-auto max-sm:text-start">
-                Ofrezco una variedad de servicios terapéuticos diseñados para ayudarte a encontrar equilibrio, sanación y crecimiento personal.
+                Ofrezco una variedad de servicios terapéuticos diseñados para
+                ayudarte a encontrar equilibrio, sanación y crecimiento
+                personal.
             </p>
         </section>
-        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <section
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+        >
             {
                 servicios.map((servicio) => (
                     <div class="flex flex-col gap-5 border border-pink-light bg-white rounded-xl p-6 transform transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
@@ -55,13 +63,14 @@ const servicios = [
                             <servicio.icono class="size-6 sm:size-7 text-pink-dark bg-pink-light rounded-full p-1" />
                         </header>
                         <main class="flex-grow">
-                            <p class="text-gray text-base">{servicio.descripcion}</p>
+                            <p class="text-gray text-base">
+                                {servicio.descripcion}
+                            </p>
                         </main>
                         <footer>
                             <a
                                 href={servicio.href || "#"}
-                                target="_blank"
-                                class={`flex items-center gap-2 text-sm text-primary font-semibold hover:text-primary/80 transition-colors ${!servicio.href ? 'pointer-events-none opacity-50' : ''}`}
+                                class={`flex items-center gap-2 text-sm text-primary font-semibold hover:text-primary/80 transition-colors ${!servicio.href ? "pointer-events-none opacity-50" : ""}`}
                             >
                                 Saber más
                                 <ArrowRightIcon class="size-4" />
@@ -70,6 +79,17 @@ const servicios = [
                     </div>
                 ))
             }
+        </section>
+        <section
+            class="flex items-center justify-center max-sm:my-5 space-y-6 mt-12"
+        >
+            <a
+                href="/servicios"
+                class="flex items-center justify-center gap-2 w-full sm:w-auto min-w-32 sm:min-w-48 text-pink-dark font-light border border-transparent border-b-pink-dark rounded-xl px-4 sm:px-5 py-2 sm:py-3 hover:border-pink-dark transition duration-300 bg-white"
+            >
+                Ver todos los servicios
+                <ArrowRightIcon class="size-4 sm:size-5" />
+            </a>
         </section>
     </article>
 </main>

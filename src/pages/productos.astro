@@ -1,0 +1,123 @@
+---
+import { productos } from "../data/productos.js";
+import Layout from "../layouts/Layout.astro";
+import ArrowRightIcon from "../components/icons/ArrowRight.astro";
+import HeartIcon from "../components/icons/Heart.astro";
+import ShopCartIcon from "../components/icons/ShopCart.astro";
+---
+
+<Layout>
+    <main
+        class="flex items-center justify-center min-h-full pt-[10vh] w-full py-16 px-4 sm:px-6 lg:px-8"
+        id="productos"
+    >
+        <article class="w-full max-w-7xl">
+            <section class="flex justify-center sm:justify-start max-sm:my-5">
+                <a
+                    href="/"
+                    class="flex items-center justify-center gap-2 w-full sm:w-auto min-w-32 sm:min-w-48 text-purple-dark font-light border border-transparent border-t-purple-dark rounded-xl px-4 sm:px-5 py-2 sm:py-3 hover:border-purple-dark transition duration-300 bg-white"
+                >
+                    <ArrowRightIcon class="size-4 sm:size-5 rotate-y-180" />
+                    Volver al inicio
+                </a>
+            </section>
+            <section class="text-center space-y-6 mb-12">
+                <p
+                    class="inline-block border border-purple-light bg-white text-purple-dark px-3 py-1 rounded-full font-light"
+                >
+                    Mis Productos
+                </p>
+                <h1
+                    class="text-3xl sm:text-4xl md:text-5xl font-bold text-purple-dark"
+                >
+                    Productos para tu sanación
+                </h1>
+                <p class="text-gray max-w-2xl mx-auto max-sm:text-start">
+                    Descubre nuestra selección de productos cuidadosamente
+                    elegidos para acompañarte en tu camino de sanación,
+                    equilibrio energético y conexión espiritual.
+                </p>
+            </section>
+            <section
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+            >
+                {
+                    productos.map((producto) => (
+                        <div class="flex flex-col gap-5 border border-purple-light bg-white rounded-xl p-6 transform transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
+                            <header class="relative overflow-hidden rounded-lg">
+                                <div class="aspect-video w-full h-auto relative">
+                                    {producto.imagen ? (
+                                        <img
+                                            src={producto.imagen}
+                                            alt={`Imagen de ${producto.titulo}`}
+                                            class="w-full h-full object-cover border border-purple-dark rounded-xl"
+                                        />
+                                    ) : (
+                                        <img
+                                            src="/default.webp"
+                                            alt={`Imagen de ${producto.titulo}`}
+                                            class="w-full h-full object-cover border border-purple-dark rounded-xl"
+                                        />
+                                    )}
+                                    {producto.nuevo && (
+                                        <div class="absolute top-2 left-2 bg-purple-dark text-purple-light text-xs font-bold px-3 py-1 rounded-xl shadow-sm">
+                                            Nuevo
+                                        </div>
+                                    )}
+                                    <div class="absolute top-2 right-2 bg-purple-light text-purple-dark text-xs font-bold p-1 rounded-full shadow-sm">
+                                        <HeartIcon class="size-4 md:size-5" />
+                                    </div>
+                                </div>
+                            </header>
+                            <section class="flex flex-col gap-2">
+                                <p class="text-xs font-semibold text-purple-dark bg-purple-100 border-[.5px] rounded-full px-3 py-1 max-w-fit">
+                                    {producto.categoria}
+                                </p>
+                                <h2 class="text-purple-dark text-lg sm:text-xl font-bold line-clamp-2">
+                                    {producto.titulo}
+                                </h2>
+                            </section>
+                            <main class="flex-grow flex flex-col gap-5">
+                                <p class="text-gray text-sm sm:text-base line-clamp-3 sm:line-clamp-4">
+                                    {producto.descripcion}
+                                </p>
+                                <p class="text-black text-lg sm:text-xl font-bold">
+                                    {producto.precio}
+                                </p>
+                            </main>
+                            <footer>
+                                <a
+                                    href="https://wa.me/573014820669"
+                                    target="_blank"
+                                    class="flex items-center justify-center gap-2 px-3 py-2 bg-gradient-to-r from-blue-dark via-purple-dark to-primary rounded-full w-full hover:opacity-70 transition duration-200"
+                                >
+                                    <span class="text-white font-semibold text-xs md:text-base">
+                                        ¿Deseas adquirirlo?
+                                    </span>
+                                    <ShopCartIcon class="size-4 md:size-5 text-white" />
+                                </a>
+                            </footer>
+                        </div>
+                    ))
+                }
+            </section>
+        </article>
+    </main>
+</Layout>
+
+<style>
+    main {
+        animation: slideUp 1s ease-out;
+    }
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>

@@ -1,6 +1,5 @@
 ---
 import ListCheckIcon from "./icons/ListCheck.astro";
-import PhoneCallIcon from "./icons/PhoneCall.astro";
 ---
 
 <main
@@ -37,7 +36,7 @@ import PhoneCallIcon from "./icons/PhoneCall.astro";
         </p>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
             <a
-                href="#servicios"
+                href="/servicios"
                 class="flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-dark via-purple-dark to-primary rounded-full w-full hover:opacity-70 transition duration-200"
             >
                 <ListCheckIcon class="size-5 md:size-6 text-white" />
@@ -46,11 +45,11 @@ import PhoneCallIcon from "./icons/PhoneCall.astro";
                 >
             </a>
             <a
-                href="#contacto"
+                href="/productos"
                 class="flex items-center justify-center gap-2 px-4 py-3 border border-pink-light bg-white rounded-full w-full hover:bg-pink-light transition duration-200"
             >
-                <PhoneCallIcon class="size-5 md:size-6 text-primary" />
-                <span class="text-primary font-semibold text-sm md:text-base">Contactar ahora</span
+                <ListCheckIcon class="size-5 md:size-6 text-primary" />
+                <span class="text-primary font-semibold text-sm md:text-base">Conoce mis productos</span
                 >
             </a>
         </div>
