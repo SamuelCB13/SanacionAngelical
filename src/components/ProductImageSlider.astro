@@ -1,0 +1,132 @@
+---
+// ProductImageSlider.astro
+export interface Props {
+    imagenes: string[];
+    titulo: string;
+    interval?: number; // Intervalo en ms para el cambio automático
+}
+
+const { imagenes, titulo, interval = 3000 } = Astro.props;
+const defaultImage = "/default.webp";
+const slideImages = imagenes && imagenes.length > 0 ? imagenes : [defaultImage];
+---
+
+<div
+    class="product-slider relative overflow-hidden rounded-lg aspect-square w-full h-auto"
+>
+    {
+        slideImages.map((imagen, index) => (
+            <div
+                class="slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-500 ease-in-out"
+                data-index={index}
+            >
+                <img
+                    src={imagen}
+                    alt={`Imagen de ${titulo} - ${index + 1}`}
+                    class="w-full h-full border border-purple-dark rounded-xl"
+                />
+            </div>
+        ))
+    }
+
+    {
+        slideImages.length > 1 && (
+            <div class="slider-dots absolute bottom-2 left-0 right-0 flex justify-center gap-1">
+                {slideImages.map((_, index) => (
+                    <button
+                        class="dot w-2 h-2 rounded-full bg-white opacity-60 hover:opacity-100 transition-opacity"
+                        data-index={index}
+                        aria-label={`Ver imagen ${index + 1}`}
+                    />
+                ))}
+            </div>
+        )
+    }
+</div>
+
+<script define:vars={{ interval, slideCount: slideImages.length }}>
+    document.addEventListener("DOMContentLoaded", () => {
+        const sliders = document.querySelectorAll(".product-slider");
+
+        sliders.forEach((slider) => {
+            const slides = slider.querySelectorAll(".slide");
+            const dots = slider.querySelectorAll(".dot");
+            let currentIndex = 0;
+            let intervalId;
+
+            // Solo configurar el slider si hay más de una imagen
+            if (slides.length <= 1) {
+                slides[0].classList.remove("opacity-0");
+                return;
+            }
+
+            function showSlide(index) {
+                // Ocultar todas las slides
+                slides.forEach((slide) => {
+                    slide.classList.add("opacity-0");
+                    slide.classList.remove("opacity-100", "z-10");
+                });
+
+                // Mostrar la slide actual
+                slides[index].classList.remove("opacity-0");
+                slides[index].classList.add("opacity-100", "z-10");
+
+                // Actualizar dots
+                dots.forEach((dot, i) => {
+                    if (i === index) {
+                        dot.classList.add("bg-purple-dark", "opacity-100");
+                        dot.classList.remove("bg-white", "opacity-60");
+                    } else {
+                        dot.classList.remove("bg-purple-dark", "opacity-100");
+                        dot.classList.add("bg-white", "opacity-60");
+                    }
+                });
+
+                currentIndex = index;
+            }
+
+            function nextSlide() {
+                let nextIndex = currentIndex + 1;
+                if (nextIndex >= slides.length) {
+                    nextIndex = 0;
+                }
+                showSlide(nextIndex);
+            }
+
+            // Iniciar el slider
+            showSlide(0);
+
+            // Configurar el intervalo para cambio automático
+            intervalId = setInterval(nextSlide, interval);
+
+            // Agregar eventos a los dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener("click", () => {
+                    clearInterval(intervalId); // Detener el intervalo automático
+                    showSlide(index);
+                    // Reiniciar el intervalo
+                    intervalId = setInterval(nextSlide, interval);
+                });
+            });
+
+            // Pausar el slider al pasar el mouse por encima
+            slider.addEventListener("mouseenter", () => {
+                clearInterval(intervalId);
+            });
+
+            // Reanudar el slider al quitar el mouse
+            slider.addEventListener("mouseleave", () => {
+                intervalId = setInterval(nextSlide, interval);
+            });
+        });
+    });
+</script>
+
+<style>
+    .slide {
+        z-index: 0;
+    }
+    .slide.opacity-100 {
+        z-index: 10;
+    }
+</style>

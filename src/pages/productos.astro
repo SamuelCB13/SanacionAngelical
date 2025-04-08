@@ -4,6 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import ArrowRightIcon from "../components/icons/ArrowRight.astro";
 import HeartIcon from "../components/icons/Heart.astro";
 import ShopCartIcon from "../components/icons/ShopCart.astro";
+import ProductImageSlider from "../components/ProductImageSlider.astro";
 ---
 
 <Layout>
@@ -45,28 +46,18 @@ import ShopCartIcon from "../components/icons/ShopCart.astro";
                     productos.map((producto) => (
                         <div class="flex flex-col gap-5 border border-purple-light bg-white rounded-xl p-6 transform transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
                             <header class="relative overflow-hidden rounded-lg">
-                                <div class="aspect-video w-full h-auto relative">
-                                    {producto.imagen ? (
-                                        <img
-                                            src={producto.imagen}
-                                            alt={`Imagen de ${producto.titulo}`}
-                                            class="w-full h-full object-cover border border-purple-dark rounded-xl"
-                                        />
-                                    ) : (
-                                        <img
-                                            src="/default.webp"
-                                            alt={`Imagen de ${producto.titulo}`}
-                                            class="w-full h-full object-cover border border-purple-dark rounded-xl"
-                                        />
-                                    )}
-                                    {producto.nuevo && (
-                                        <div class="absolute top-2 left-2 bg-purple-dark text-purple-light text-xs font-bold px-3 py-1 rounded-xl shadow-sm">
-                                            Nuevo
-                                        </div>
-                                    )}
-                                    <div class="absolute top-2 right-2 bg-purple-light text-purple-dark text-xs font-bold p-1 rounded-full shadow-sm">
-                                        <HeartIcon class="size-4 md:size-5" />
+                                <ProductImageSlider
+                                    imagenes={producto.imagenes || []}
+                                    titulo={producto.titulo}
+                                    interval={3000}
+                                />
+                                {producto.nuevo && (
+                                    <div class="absolute top-2 left-2 bg-purple-dark text-purple-light text-xs font-bold px-3 py-1 rounded-xl shadow-sm z-20">
+                                        Nuevo
                                     </div>
+                                )}
+                                <div class="absolute top-2 right-2 bg-purple-light text-purple-dark text-xs font-bold p-1 rounded-full shadow-sm z-20">
+                                    <HeartIcon class="size-4 md:size-5" />
                                 </div>
                             </header>
                             <section class="flex flex-col gap-2">
